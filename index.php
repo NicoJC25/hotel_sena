@@ -13,8 +13,8 @@
    
     <h3>Hotel SENA - Administración de habitaciones</h3>
 
+    <a href="admin/habitacion/crear2.php">Crear Tipo de Habitacion</a>
     <a href="admin/habitacion/crear.php">Crear habitacion</a>
     <a href="admin/habitacion/seleccionar.php">Listar las habitaciones</a><br>
 
 </body>
-
