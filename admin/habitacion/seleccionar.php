@@ -5,7 +5,7 @@ require '../../includes/funciones.php';
 $bd = conectar_db();
 
 
-$consulta = "SELECT * FROM habitacion";
+$consulta = "SELECT * FROM habitacion ORDER BY nro_hab;";
 
 
 $resultado_consulta = mysqli_query($bd, $consulta);
@@ -15,14 +15,19 @@ $resultado_consulta = mysqli_query($bd, $consulta);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consultar Habitaciones</title>
+<head>
+        <title>Habitaciones</title>
+        <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="../../estilos/estilos.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+    </head>
 </head>
 <body>
-<h3>Gestion de habitaciones - Consultar</h3>  
-
+<h4>Gestion de habitaciones - Consultar</h4>  
+<a href="../../index.php"><input type="button" id="regresar" name="regresar" value="Regresar"></a>
 <table>
     <th>
         <tr>
@@ -43,14 +48,14 @@ $resultado_consulta = mysqli_query($bd, $consulta);
         <td> <?php echo $habitacion['descripcion'];?> </td>
         <td> <?php echo $habitacion['id_tipo_h'];?></td>
         <td>
-            <a href="">Eliminar</a>
-            <a href="/admin/habitacion/actualizar.php?id=<?php echo $habitacion['nro_hab'];?>">Actualizar</a>
+        <td><a href="eliminar.php?nro_hab=<?php echo $habitacion['nro_hab'];?>">Eliminar</a>
+        <a href="actualizar.php?nro_hab=<?php echo $habitacion['nro_hab'];?>">Actualizar</a>
+    </td>
             <?php } ?>
         </td>
         
         
     </tr>
-    <a href="../../index.php">Regresar...</a>
 </table>
 
 <?php 

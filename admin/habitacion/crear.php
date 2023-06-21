@@ -36,7 +36,7 @@ $errores =  [];
         //Insertar los datos a la BD
         
             $sql = "INSERT INTO habitacion(nro_hab, estado, descripcion, id_tipo_h) 
-            VALUES ('$nro_hab', '$estado', '$descripcion', '$id_tipo_h')" ;
+            VALUES ('$nro_hab', '$estado', '$descripcion', '$id_tipo_h')";
 
             echo $sql;
 
